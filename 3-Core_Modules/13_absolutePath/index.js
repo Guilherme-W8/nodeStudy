@@ -8,4 +8,4 @@ const midFolder = 'relatorios';
 const fileName = 'guilherme.txt';
 
 const finalPath = path.join("/", 'arquivos', midFolder, fileName);
-console.log(finalPath);
+console.log(finalPath); 
