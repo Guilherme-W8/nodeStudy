@@ -1,6 +1,6 @@
 const http = require('http');
 
-const server = http.createServer((require, response) => {
+const server = http.createServer((request, response) => {
     response.write('Learning HTTP Module on Node.JS');
     response.end();
 });

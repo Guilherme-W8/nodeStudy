@@ -1,6 +1,6 @@
 const http = require('http');
 
-const server = http.createServer((require, response) => {
+const server = http.createServer((request, response) => {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html');
     response.end('<h1>First server returning HTML with Node.js</h1>');
