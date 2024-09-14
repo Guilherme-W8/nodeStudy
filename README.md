@@ -1,6 +1,8 @@
 # Node.js Study Repository
 Bem-vindo ao meu repositório de estudos de Node.js! Aqui, vou documentar todo o meu aprendizado, desde os conceitos fundamentais até tópicos mais avançados, incluindo a utilização do Express.js.
 
+<!--Divisão do módulo 1-->
+
 <details>
     <summary>
         Módulo 1 - Introducion
@@ -18,6 +20,8 @@ Bem-vindo ao meu repositório de estudos de Node.js! Aqui, vou documentar todo o
 4. Primeiros passos com Node.js – Execução de scripts básicos no Node.js, incluindo a criação do primeiro programa e uso de módulos.
 
 </details>
+
+<!--Divisão do módulo 2-->
 
 <details>
     <summary>
@@ -40,4 +44,24 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 
 6. Tratamento de erros – Como o Node.js gerencia erros e boas práticas para tratá-los.
     
+</details>
+
+<!--Divisão do módulo 3-->
+
+<details>
+    <summary>
+        Módulo 3 - Core Modules
+    </summary>
+    <br>
+    
+>Nesta seção, aprofundei meus conhecimentos em Core Modules do Node!
+
+1. Module http: Como instanciar um servidor. Usei a classe createServer para criar o servidor e listen para definir a porta da aplicação. No exemplo prático, retornei um HTML para a página.
+
+2. Module url: - O módulo url serve para isolar uma URL que passamos para o método parse. Podemos resgatar: host, path, search, query e etc. A partir desses dados, podemos alterar a lógica do nosso programa. Usei para definir a lógica quando tivesse entrada de argumentos pela url do servidor http.
+
+3. Module File System: O módulo File System (ou 'fs') é utilizado para manipular arquivos e diretórios. Usei para renderizar um arquivo HTML em um servidor http.
+
+4. Module path: Serve para manipulação de caminhos de arquivos. Utilizei diversos módulos para saber mais sobre um path fictício e também fiz a criação de um path dinâmico.
+
 </details>
