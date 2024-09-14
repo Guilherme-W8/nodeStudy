@@ -65,3 +65,24 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 4. Module path: Serve para manipulação de caminhos de arquivos. Utilizei diversos módulos para saber mais sobre um path fictício e também fiz a criação de um path dinâmico.
 
 </details>
+
+<!--Divisão do módulo 4-->
+
+<details>
+    <summary>
+        Módulo 4 - NPM Fundamentos
+    </summary>
+    <br>
+    
+>Nesta seção, aprofundei meus conhecimentos em Gerenciamento de Pacotes Node com npm.
+
+1. Podemos gerenciar pacotes, configurar projeto e rodar scripts.
+
+2. A criação de um projeto NPM sempre gera um arquivo package.json. Visualizei como funciona a organização desse arquivo.
+
+3. Instalar módulos em ambiente de desenvolvimento.
+
+4. Executando scripts com NPX.
+
+
+</details>
