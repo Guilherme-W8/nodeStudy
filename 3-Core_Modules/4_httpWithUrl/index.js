@@ -4,8 +4,7 @@ const server = http.createServer((request, response) => {
     const urlInfo = require('url').parse(request.url, true);
     const name = urlInfo.query.name;
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'text/html');
+    response.writeHead(200, 'Content-Type', 'text/html');
 
     if(!name){
         response.end(
