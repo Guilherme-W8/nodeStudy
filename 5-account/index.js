@@ -91,6 +91,33 @@ function checkAccount(accountName) {
     return true;
 }
 
+function addAmount(accountName, quantidadeDeposito) {
+    const accountData = getAccount(accountName);
+
+    if(!quantidadeDeposito){
+        console.log(chalk.bgRed.black('Ocorre uma falha.'));
+        return deposit();
+    }
+
+    accountData.balance = parseFloat(quantidadeDeposito) + parseFloat(accountData.balance);
+    fs.writeFileSync(
+        `accounts/${accountName}.json`,
+        JSON.stringify(accountData),
+        (error) => console.log(error)
+    )
+
+    console.log(chalk.green(`Foi adicionado o valor R$${quantidadeDeposito} a sua conta.`));
+}
+
+function getAccount(accountName) {
+    const accountJSON = fs.readFileSync(`accounts/${accountName}.json`, {
+        encoding: 'utf-8',
+        flag: 'r'
+    });
+
+    return JSON.parse(accountJSON);
+}
+
 // Adicionar valor a uma conta
 function deposit() {
 
@@ -106,6 +133,17 @@ function deposit() {
             if(!checkAccount(accountName)){
                 return deposit();
             }
+
+            inquirer.prompt([{
+                name: 'quantidadeDeposito',
+                message: 'Qual valor voce deseja depositar?> '
+            }])
+            .then((answer) => {
+                const quantidadeDeposito = answer['quantidadeDeposito'];
+                addAmount(accountName, quantidadeDeposito);
+                operation();
+            })
+            .catch(error => console.log(error));
         })
         .catch((error) => console.log(error));
 }
