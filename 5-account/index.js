@@ -17,10 +17,25 @@ function operation() {
         }])
         .then((answers) => {
             const action = answers['action'];
-            
-            if(action === 'Criar conta'){
-                createAccount();
-                buildAccount();
+
+            switch (action) {
+                case 'Criar conta':
+                    createAccount();
+                    buildAccount();
+                    break;
+
+                case 'Consultar saldo':
+                    break;
+
+                case 'Depositar':
+                    break;
+
+                case 'Sacar':
+                    break;
+                
+                case 'Sair':
+                    console.log(chalk.bgBlue.black('Obrigado por usar o Account!'));
+                    process.exit();
             }
         })
         .catch((error) => console.log(error));
@@ -30,7 +45,7 @@ operation();
 
 // Criar conta
 function createAccount() {
-    console.log(chalk.bgGreen.black('Parabens pela criacao da conta!'));
+    console.log(chalk.bgGreen.black('Obrigado por escolher nosso banco!'));
     console.log(chalk.green('Defina as configuracoes da conta a seguir'));
 }
 
