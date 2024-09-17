@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 
 // Interno
 const fs = require('fs');
+const { error } = require('console');
 console.log('Hello world! - Account');
 
 function operation() {
@@ -33,6 +34,7 @@ function operation() {
                     break;
 
                 case 'Sacar':
+                    withdraw();
                     break;
                 
                 case 'Sair':
@@ -108,6 +110,58 @@ function addAmount(accountName, quantidadeDeposito) {
     )
 
     console.log(chalk.green(`Foi adicionado o valor R$${quantidadeDeposito} a sua conta.`));
+}
+
+function removeAmount(accountName, saque) {
+    const accountData = getAccount(accountName);
+
+    if(!saque){
+        console.log(chalk.bgRed.black('Ocorre uma falha.'));
+        return withdraw();
+    }
+
+    if(accountData.balance < saque){
+        console.log(chalk.bgRed.black('Valor indisponivel na conta.'));
+        return withdraw();
+    }
+
+    accountData.balance = parseFloat(accountData.balance) - parseFloat(saque);
+
+    fs.writeFileSync(
+        `accounts/${accountName}.json`, 
+        JSON.stringify(accountData),
+        (error) => console.log(error)
+    )
+
+    console.log(chalk.green('Saque bem sucedido!'));
+    operation();
+}
+
+function withdraw() {
+    inquirer
+        .prompt([{
+            name: 'accountName',
+            message: 'Qual nome da sua conta?> '
+        }])
+        .then((answer) => {
+            const accountName = answer['accountName'];
+
+            if(!checkAccount(accountName)){
+                return withdraw();
+            }
+
+            inquirer.prompt([{
+                name: 'saque',
+                message: 'Quanto voce deseja sacar?> '
+            }])
+            .then((answer) => {
+                const saque = answer['saque'];
+
+                removeAmount(accountName, saque);
+            })
+            .catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
 }
 
 function getAccount(accountName) {
