@@ -28,6 +28,7 @@ function operation() {
                     break;
 
                 case 'Depositar':
+                    deposit();
                     break;
 
                 case 'Sacar':
@@ -79,4 +80,32 @@ function buildAccount() {
             operation();
         })
         .catch(error => console.log(error));
+}
+
+function checkAccount(accountName) {
+    if(!fs.existsSync(`accounts/${accountName}.json`)){
+        console.log(chalk.bgRed.black('Essa conta não existe!'));
+        return false;
+    }
+
+    return true;
+}
+
+// Adicionar valor a uma conta
+function deposit() {
+
+    inquirer
+        .prompt([{
+            name: 'accountName',
+            message: 'Digite o nome da sua conta: '
+        }])
+        .then((answers) => {
+            const accountName = answers['accountName'];
+
+            // Verificar se a conta existe
+            if(!checkAccount(accountName)){
+                return deposit();
+            }
+        })
+        .catch((error) => console.log(error));
 }
