@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars');  // Nova forma de importar o expre
 const port = 3000;
 
 const app = express();
+app.use(express.static('public'));
 const hbs = exphbs.create({
   partialsDir: ['views/partials'],
 });
