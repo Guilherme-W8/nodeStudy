@@ -1,0 +1,15 @@
+{{#if auth}} 
+  <p>
+    Você está autenticado <a href="/dashboard">Área de membros</a>
+  </p>
+{{/if}}
+
+{{#if approved}}
+  <p>Congrats, you are approved!</p>
+{{else}}
+  <p>:( you are not approved</p>
+{{/if}}
+
+<h1>Olá mundo - Handlebars</h1>
+<p>User name: {{ user.name }} {{ user.surname }}</p>
+<p>Favorite number: {{ favoriteNumber }}</p>
