@@ -5,7 +5,7 @@
 
   {{#each returnedBooks}}
     <div>
-      #{{this.id}} - <span class="bold">{{this.title}}</span> - {{this.quantity_page}} pages
+      #{{this.id}} - <span class="bold"><a href="/books/{{this.id}}">{{this.title}}</a></span> - {{this.quantity_page}} pages
     </div>
   {{/each}}
 </div>
