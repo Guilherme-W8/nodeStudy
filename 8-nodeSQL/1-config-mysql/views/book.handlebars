@@ -5,8 +5,10 @@
     <p>The book has {{returnedBook.quantity_page}} pages.</p>
 
     <div class="actions">
-      <a href="/books/edit/{{returnedBook.id}}">Editar</a>
+      <a href="/books/edit/{{returnedBook.id}}">Edit</a>
+      <form action="/books/remove/{{returnedBook.id}}" method="POST">
+        <input type="submit" value="Remove">
+      </form>
     </div>
-
   </div>
 </div>
