@@ -80,6 +80,23 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
+app.post('/books/updatedbook', (request, response) => {
+  const id = request.body.id;
+  const title = request.body.title;
+  const pages = request.body.quantity_page;
+
+  const queryUpdate = `UPDATE books SET title = '${title}', quantity_page = '${pages}' WHERE id = ${id}`;
+
+  connection.query(queryUpdate, (error) => {
+    if(error){
+      console.log(chalk.red(error));
+      return;
+    } else {
+      response.redirect('/books');
+    }
+  });
+});
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
