@@ -97,6 +97,19 @@ app.post('/books/updatedbook', (request, response) => {
   });
 });
 
+app.post('/books/remove/:id', (request, response) => {
+  const id = request.params.id;
+
+  const queryDelete = `DELETE FROM books WHERE id = ${id}`;
+  connection.query(queryDelete, (error) => {
+    if(error){
+      console.log(error);
+    } else {
+      response.redirect('/books');
+    }
+  });
+});
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
