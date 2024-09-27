@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import express from 'express';
+import express, { query } from 'express';
 import exphbs from 'express-handlebars';
 import mysql from 'mysql';
 
@@ -42,6 +42,22 @@ app.get('/books', (request, response) => {
       const returnedBooks = dataBook;
       console.log('\n' + chalk.green(`Dados retornados com sucesso!\n>\n${JSON.stringify(returnedBooks)}\n<`));
       response.render('books', { returnedBooks });
+    }
+  });
+});
+
+app.get('/books/:id', (request, response) => {
+  const id = request.params.id;
+
+  const queryBookID = `SELECT * FROM books WHERE id = ${id}`;
+  connection.query(queryBookID, (error, dataBook) => {
+    if(error){
+      console.log(error);
+      return;
+    } else {
+      const returnedBook = dataBook[0];
+      console.log('\n' + chalk.green(`Livro retornado com sucesso!\n>\n${JSON.stringify(returnedBook)}\n<`));
+      response.render('book', { returnedBook });
     }
   });
 });
