@@ -13,24 +13,6 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-app.post('/books/register', (request, response) => {
-  const title = request.body.title;
-  const quantity_page = request.body.quantity_page;
-  
-  const bookQuery = `INSERT INTO books (title, quantity_page) VALUES ('${title}', '${quantity_page}')`;
-
-  pool.query(bookQuery, (error) => {
-    if(error){
-      console.log(error);
-      return;
-    } else {
-      console.log(chalk.green(`Query success!: > ${title}, ${quantity_page} <`));
-    }
-  });
-
-  response.redirect('/books');
-});
-
 app.get('/books', (request, response) => {
   const queryAllBooks = 'SELECT * FROM books';
 
@@ -49,8 +31,10 @@ app.get('/books', (request, response) => {
 app.get('/books/:id', (request, response) => {
   const id = request.params.id;
 
-  const queryBookID = `SELECT * FROM books WHERE id = ${id}`;
-  pool.query(queryBookID, (error, dataBook) => {
+  const queryBookID = `SELECT * FROM books WHERE ?? = ?`;
+  const dataToQuery = ['id', id];
+
+  pool.query(queryBookID, dataToQuery, (error, dataBook) => {
     if(error){
       console.log(error);
       return;
@@ -65,8 +49,10 @@ app.get('/books/:id', (request, response) => {
 app.get('/books/edit/:id', (request, response) => {
   const id = request.params.id;
 
-  const queryEdit = `SELECT * FROM books WHERE id = ${id}`;
-  pool.query(queryEdit, (error, data) => {
+  const queryEdit = `SELECT * FROM books WHERE ?? = ?`;
+  const dataToQuery = ['id', id];
+
+  pool.query(queryEdit, dataToQuery, (error, data) => {
     if(error){
       console.log(chalk.red(error));
     } else {
@@ -80,14 +66,34 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
+app.post('/books/register', (request, response) => {
+  const title = request.body.title;
+  const quantity_page = request.body.quantity_page;
+  
+  const bookQuery = `INSERT INTO books (??, ??) VALUES (?, ?)`;
+  const dataToQuery = ['title', 'quantity_page', title, quantity_page];
+
+  pool.query(bookQuery, dataToQuery, (error) => {
+    if(error){
+      console.log(error);
+      return;
+    } else {
+      console.log(chalk.green(`Query success!: > ${title}, ${quantity_page} <`));
+    }
+  });
+
+  response.redirect('/books');
+});
+
 app.post('/books/updatedbook', (request, response) => {
   const id = request.body.id;
   const title = request.body.title;
   const pages = request.body.quantity_page;
 
-  const queryUpdate = `UPDATE books SET title = '${title}', quantity_page = '${pages}' WHERE id = ${id}`;
+  const queryUpdate = `UPDATE books SET ?? = ?, ?? = ? WHERE ?? = ?`;
+  const dataToQuery = ['title', title, 'quantity_page', pages, 'id', id];
 
-  pool.query(queryUpdate, (error) => {
+  pool.query(queryUpdate, dataToQuery, (error) => {
     if(error){
       console.log(chalk.red(error));
       return;
@@ -100,8 +106,10 @@ app.post('/books/updatedbook', (request, response) => {
 app.post('/books/remove/:id', (request, response) => {
   const id = request.params.id;
 
-  const queryDelete = `DELETE FROM books WHERE id = ${id}`;
-  pool.query(queryDelete, (error) => {
+  const queryDelete = `DELETE FROM books WHERE ?? = ?`;
+  const dataToQuery = ['id', id];
+
+  pool.query(queryDelete, dataToQuery, (error) => {
     if(error){
       console.log(error);
     } else {
