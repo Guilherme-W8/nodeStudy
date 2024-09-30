@@ -86,3 +86,57 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 
 
 </details>
+
+<!--Divisão do módulo 5-->
+
+<details>
+    <summary>
+        Módulo 5 - Projeto Accounts
+    </summary>
+    <br>
+    
+>BLANK
+
+</details>
+
+</details>
+
+<!--Divisão do módulo 6-->
+
+<details>
+    <summary>
+        Módulo 6 - Express
+    </summary>
+    <br>
+    
+>BLANK
+
+</details>
+
+</details>
+
+<!--Divisão do módulo 7-->
+
+<details>
+    <summary>
+        Módulo 7 - Template Engine
+    </summary>
+    <br>
+    
+>BLANK
+
+</details>
+
+</details>
+
+<!--Divisão do módulo 8-->
+
+<details>
+    <summary>
+        Módulo 8 - Integração Node com MySQL
+    </summary>
+    <br>
+    
+>BLANK
+
+</details>
