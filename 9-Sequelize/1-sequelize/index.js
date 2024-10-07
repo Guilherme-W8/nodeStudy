@@ -1,7 +1,7 @@
-import chalk from 'chalk';
 import express, { query, request, response } from 'express';
 import exphbs from 'express-handlebars';
 import connection from './db/dbconnect.js';
+import User from './models/User.js';
 
 const app = express();
 app.engine('handlebars', exphbs.engine());
@@ -17,4 +17,8 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
-app.listen(3000);
+connection.sync().then(() => {
+  app.listen(3000);
+}).catch(error => {
+  console.log(error);
+});
