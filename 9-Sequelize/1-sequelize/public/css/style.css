@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #dfdfdf;
+  background-color: #fff;
 }
 
 a {
@@ -12,7 +12,7 @@ a {
 }
 
 #navbar {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #dfdfdf;
   padding: 1em;
   margin-bottom: 1em;
 }
@@ -52,28 +52,17 @@ h1 {
   padding: 8px;
 }
 
-/*  Books 
+.form-checkbox {
+    flex-direction: row;
+}
 
-.books-container div {
-  border-bottom: 1px solid #000 ;
+.form-checkbox input {
+    margin-right: 10px;
+}
+
+.send-input {
   padding: 5px;
-  margin: 5px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-Book */
-
-.actions {
-  margin-top: 1em;
-  display: flex;
-  justify-content: center;
-}
-
-.actions a {
-  display: flex;
-  justify-content: center;
-  margin-right: 1em;
+  background-color: #000;
+  border: transparent;
+  color: white;
 }
