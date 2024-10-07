@@ -16,3 +16,5 @@ const User = db.define('User', {
     type: DataTypes.BOOLEAN
   },
 });
+
+export default User;
