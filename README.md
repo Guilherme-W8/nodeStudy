@@ -86,3 +86,81 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 
 
 </details>
+
+<!--Divisão do módulo 5-->
+
+<details>
+    <summary>
+        Módulo 5 - Projeto Accounts
+    </summary>
+    <br>
+    
+>Criação de um projeto utilizando todos os conceitos e tecnologias aprendidas até o momento
+
+1. Projeto roda no terminal, contém criação de conta, manipulação de saldo e estilização das opcções
+
+2.  Foram utilizados módulos internos como por exemplo o File System e módulos externos como o Chalk e Inquirer
+
+3.  Criação de fluxo de lógica com estruturas do Node.js
+
+4. Organização de funções para cada tarefa
+
+</details>
+
+<!--Divisão do módulo 6-->
+
+<details>
+    <summary>
+        Módulo 6 - Express
+    </summary>
+    <br>
+    
+>Introdução ao Express, framework poderoso para criação e gerenciamento de rotas
+
+1. Foi instalado e feita a execução de alguns parâmetros e Middlewares importantes
+
+2. Middlewares utilizados: Leitura de corpo da requisição, arquivos estáticos, desenvolvimento de middleware
+
+3. Criação e gerenciamento de diversas rotas
+
+</details>
+
+<!--Divisão do módulo 7-->
+
+<details>
+    <summary>
+        Módulo 7 - Template Engine
+    </summary>
+    <br>
+    
+> Aqui foi desenvolvido aplicações e conceitos de Template Engines (Handlebars)
+
+1. Criação de Layouts com Handlebars
+
+2. Estruturas de controle e condicionais
+
+3. Integrando CSS com Handlebars
+
+4. Utilizando Partials 
+
+</details>
+
+<!--Divisão do módulo 8-->
+
+<details>
+    <summary>
+        Módulo 8 - Integração Node com MySQL
+    </summary>
+    <br>
+    
+> Neste módulo foi abordado sobre instalação, gerenciamento e integração do MySQL com Node.js
+
+1. Instalação e aplicação do MySQL nos ambiente de Linux e Windows 
+
+2. Ferramenta de visualização Workbench
+ 
+3. Operações básicas no banco com Node.js: Criação de tabelas, inserção/remoção de dados, preenchimento de formulário, atualização de registro 
+
+4. Implementação de Connection Pool
+
+</details>
