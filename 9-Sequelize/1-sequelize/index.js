@@ -17,6 +17,26 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
+app.get('/users/create', (request, response) => {
+  response.render('adduser');
+});
+
+app.post('/users/create', async (request, response) => {
+  const name = request.body.name;
+  const occupation = request.body.occupation;
+  let newsletter = request.body.newsletter;
+
+  if(newsletter === 'on') {
+    newsletter = true;
+  } else {
+    newsletter = false;
+  }
+  
+  await User.create({ name, occupation, newsletter });
+
+  response.redirect('/');
+});
+
 connection.sync().then(() => {
   app.listen(3000);
 }).catch(error => {
