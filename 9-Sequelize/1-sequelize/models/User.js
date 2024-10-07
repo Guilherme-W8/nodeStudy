@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import db from '../db/dbconnect';
+import db from '../db/dbconnect.js';
 
 const User = db.define('User', {
   name: {
