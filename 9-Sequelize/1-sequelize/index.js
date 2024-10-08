@@ -1,4 +1,4 @@
-import express, { query, request, response } from 'express';
+import express, { query, raw, request, response } from 'express';
 import exphbs from 'express-handlebars';
 import connection from './db/dbconnect.js';
 import User from './models/User.js';
@@ -13,8 +13,12 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-app.get('/', (request, response) => {
-  response.render('home');
+app.get('/', async (request, response) => {
+
+  const users = await User.findAll({raw: true});
+  console.log(users);
+
+  response.render('home', { users: users });
 });
 
 app.get('/users/create', (request, response) => {
