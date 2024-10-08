@@ -13,14 +13,6 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-app.get('/', async (request, response) => {
-
-  const users = await User.findAll({raw: true});
-  console.log(users);
-
-  response.render('home', { users: users });
-});
-
 app.get('/users/create', (request, response) => {
   response.render('adduser');
 });
@@ -39,6 +31,29 @@ app.post('/users/create', async (request, response) => {
   await User.create({ name, occupation, newsletter });
 
   response.redirect('/');
+});
+
+app.get('/', async (request, response) => {
+
+  const users = await User.findAll({raw: true});
+  console.log(users);
+
+  response.render('home', { users: users });
+});
+
+app.get('/users/:id', async (request, response) => {
+  const id = request.params.id;
+
+  const user = await User.findOne(
+    {
+      raw: true,
+      where: {
+        id: id
+      }
+    }
+  );
+
+  response.render('userview', { user });
 });
 
 connection.sync().then(() => {
