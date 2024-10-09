@@ -33,6 +33,21 @@ app.post('/users/create', async (request, response) => {
   response.redirect('/');
 });
 
+app.post('/users/delete/:id', async (request, response) => {
+
+  const id = request.params.id;
+  
+  await User.destroy(
+    {
+      where: {
+        id: id
+      }
+    }
+  );
+
+  response.redirect('/');
+});
+
 app.get('/', async (request, response) => {
 
   const users = await User.findAll({raw: true});
