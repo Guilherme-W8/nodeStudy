@@ -48,6 +48,22 @@ app.post('/users/delete/:id', async (request, response) => {
   response.redirect('/');
 });
 
+app.get('/users/edit/:id', async (request, response) => {
+
+  const id = request.params.id;
+  
+  const user = await User.findOne(
+    {
+      raw: true,
+      where: {
+        id: id
+      }
+    }
+  );
+
+  response.render('useredit', { user });
+});
+
 app.get('/', async (request, response) => {
 
   const users = await User.findAll({raw: true});
