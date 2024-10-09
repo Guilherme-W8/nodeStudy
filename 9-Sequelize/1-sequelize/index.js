@@ -48,6 +48,38 @@ app.post('/users/delete/:id', async (request, response) => {
   response.redirect('/');
 });
 
+app.post('/users/update', async (request, response) => {
+
+  const id = request.body.id;
+  const name = request.body.name;
+  const occupation = request.body.occupation;
+  let newsletter = request.body.newsletter;
+
+  if(newsletter === 'on') {
+    newsletter = true;
+  } else {
+    newsletter = false;
+  }
+
+  const userData = {
+    id,
+    name,
+    occupation,
+    newsletter
+  };
+
+  await User.update(userData, 
+    {
+      where: {
+        id: id
+      }
+    }
+  );
+ 
+  response.redirect('/');
+
+});
+
 app.get('/users/edit/:id', async (request, response) => {
 
   const id = request.params.id;
