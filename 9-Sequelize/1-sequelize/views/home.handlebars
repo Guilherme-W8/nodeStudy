@@ -7,7 +7,7 @@
     <p>{{this.occupation}}</p>
     <div class="actions">
       <a class="details-btn" href="/users/{{this.id}}">Ver detalhes</a>
-      <form action="/users/delete/{{this.id}}">
+      <form action="/users/delete/{{this.id}}" method="POST">
         <input class="delete-btn" type="submit" value="Excluir">
       </form>
     </div>
