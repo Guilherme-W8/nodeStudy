@@ -27,3 +27,27 @@
 
   <input class="send-input" type="submit" value="Editar">
 </form>
+
+<div class="address-container">
+  <h2>Endereços</h2>
+  <form action="/address/create" method="POST">
+    <input type="hidden" name="UserId" value="{{user.id}}">
+
+    <div class="form-control">
+      <label for="street">Rua </label>
+      <input type="text" name="street" placeholder="Insira o nome da rua">
+    </div>
+
+    <div class="form-control">
+      <label for="number">Numero </label>
+      <input type="text" name="number" placeholder="Insira o número da residência">
+    </div>
+
+    <div class="form-control">
+      <label for="city">Cidade </label>
+      <input type="text" name="city" placeholder="Insira o nome da cidade">
+    </div>
+
+    <input class="send-input" type="submit" value="Incluir endereço">
+  </form>
+</div>
