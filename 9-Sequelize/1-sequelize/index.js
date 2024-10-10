@@ -83,6 +83,25 @@ app.post('/users/update', async (request, response) => {
 
 });
 
+app.post('/address/create', async (request, response) => {
+  const UserId = request.body.UserId;
+  const street = request.body.street;
+  const number = request.body.number;
+  const city = request.body.city;
+
+  const address = {
+    UserId,
+    street,
+    number,
+    city
+  };
+
+  await Address.create(address);
+
+  response.redirect(`/users/edit/${UserId}`);
+});
+
+
 app.get('/users/edit/:id', async (request, response) => {
 
   const id = request.params.id;
@@ -122,7 +141,7 @@ app.get('/users/:id', async (request, response) => {
   response.render('userview', { user });
 });
 
-connection.sync({ force: true }).then(() => {
+connection.sync().then(() => {
   app.listen(3000);
 }).catch(error => {
   console.log(error);
