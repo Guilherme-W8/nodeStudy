@@ -108,14 +108,14 @@ app.get('/users/edit/:id', async (request, response) => {
   
   const user = await User.findOne(
     {
-      raw: true,
+      include: Address,
       where: {
         id: id
       }
     }
   );
 
-  response.render('useredit', { user });
+  response.render('useredit', { user: user.get({ plain: true }) });
 });
 
 app.get('/', async (request, response) => {
