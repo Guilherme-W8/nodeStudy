@@ -56,10 +56,15 @@
 
     {{#each user.Addresses}}
       <div class="p-list">
-        <p>Endereço #{{this.id}}</p>
         <p>{{this.street}}</p>
         <p>{{this.number}}</p>
         <p>{{this.city}}</p>
+
+        <form action="/address/delete" method="POST">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <input type="hidden" name="UserId" value="{{this.UserId}}">
+          <input class="remove-input" type="submit" value="Remover endereço">
+        </form>
       </div>
     {{/each}}
   </div>
