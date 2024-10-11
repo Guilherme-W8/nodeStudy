@@ -105,17 +105,21 @@ app.post('/address/create', async (request, response) => {
 app.get('/users/edit/:id', async (request, response) => {
 
   const id = request.params.id;
-  
-  const user = await User.findOne(
-    {
-      include: Address,
-      where: {
-        id: id
+  try {
+    const user = await User.findOne(
+      {
+        include: Address,
+        where: {
+          id: id
+        }
       }
-    }
-  );
-
-  response.render('useredit', { user: user.get({ plain: true }) });
+    );
+  
+    response.render('useredit', { user: user.get({ plain: true }) });
+  } catch (error) {
+    console.log(error);
+  }
+  
 });
 
 app.get('/', async (request, response) => {
