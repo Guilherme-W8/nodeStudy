@@ -19,6 +19,7 @@ const Address = db.define('Address', {
   }
 });
 
+User.hasMany(Address);
 Address.belongsTo(User);
 
 export default Address;
