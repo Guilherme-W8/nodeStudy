@@ -101,6 +101,19 @@ app.post('/address/create', async (request, response) => {
   response.redirect(`/users/edit/${UserId}`);
 });
 
+app.post('/address/delete', async (request, response) => {
+  const id = request.body.id;
+  const userID = request.body.UserId;
+
+  await Address.destroy({
+    where: {
+      id: id
+    }
+  });
+
+  response.redirect(`/users/edit/${userID}`);
+});
+
 
 app.get('/users/edit/:id', async (request, response) => {
 
