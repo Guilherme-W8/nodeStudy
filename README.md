@@ -164,3 +164,23 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 4. Implementação de Connection Pool
 
 </details>
+
+<!--Divisão do módulo 9-->
+
+<details>
+    <summary>
+        Módulo 9 - Node.js com ORM Sequelize
+    </summary>
+    <br>
+    
+> Neste módulo foi abordado sobre Sequelize e como utilizamos essa ferramenta para desenvolver conexão e gerenciamento de funcções do banco de dados mais facilmente.
+
+1. IInstalação e aplicação do Sequelize em rotas Express
+
+2. Criando Models: User e Address
+ 
+3. Métodos de banco de dados: Inserção, resgate e exclusão
+
+4. Relacionamento entre as tabelas 
+
+</details>
