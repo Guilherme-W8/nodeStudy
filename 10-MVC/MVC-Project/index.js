@@ -1,6 +1,7 @@
 import express from 'express';
 import exphbs from 'express-handlebars';
-import dbConnect from './db/dbConnection.js';
+import dbConnection from './db/dbConnection.js';
+import Task from './models/Tasks.js';
 
 const app = express();
 
@@ -14,4 +15,11 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static('public'));
 
-app.listen(3000);
+dbConnection
+.sync()
+.then(() => {
+    app.listen(3000);
+})
+.catch((error) => {
+    console.log(error);
+});
