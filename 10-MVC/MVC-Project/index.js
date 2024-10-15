@@ -2,6 +2,7 @@ import express from 'express';
 import exphbs from 'express-handlebars';
 import dbConnection from './db/dbConnection.js';
 import Task from './models/Tasks.js';
+import tasksRoutes from './routes/tasksRoutes.js';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 app.use(express.static('public'));
+app.use('/tasks', tasksRoutes);
 
 dbConnection
 .sync()
