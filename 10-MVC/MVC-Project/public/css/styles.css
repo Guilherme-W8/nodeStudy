@@ -70,6 +70,10 @@ form input[type='submit'] {
  margin-top: 1em;
 }
 
+.task-list a {
+  text-decoration: none;
+ }
+
 .task-list li {
  padding: 0.5em;
  margin-bottom: 1em;
