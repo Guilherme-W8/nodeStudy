@@ -18,7 +18,10 @@ export default class TaskController {
         response.redirect('/tasks/all');
     }
 
-    static showTasks(request, response){
-        response.render('tasks/all');
+    static async showTasks(request, response){
+
+        const tasks = await Task.findAll({raw: true});
+
+        response.render('tasks/all', {tasks});
     }
 }
