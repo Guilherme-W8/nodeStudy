@@ -87,6 +87,7 @@ form input[type='submit'] {
  color: #730d73;
  transition: 0.5s;
  font-size: 1.2em;
+ margin-right: 0.2em;
 }
 
 .task-list .title:hover {
@@ -105,4 +106,14 @@ form input[type='submit'] {
 
 .actions i:hover {
  color: #730d73;
+}
+
+.actions form {
+  margin: 0;
+}
+
+.actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
