@@ -1,3 +1,4 @@
+import { where } from 'sequelize';
 import Task from '../models/Tasks.js';
 
 export default class TaskController {
@@ -23,5 +24,19 @@ export default class TaskController {
         const tasks = await Task.findAll({raw: true});
 
         response.render('tasks/all', {tasks});
+    }
+
+    static async removeTask(request, response){
+        const id = request.body.id;
+
+        await Task.destroy(
+            {
+                where: {
+                    id: id,
+                },
+            }
+        );
+
+        response.redirect('/tasks/all');
     }
 }
