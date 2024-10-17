@@ -1,4 +1,3 @@
-import { where } from 'sequelize';
 import Task from '../models/Tasks.js';
 
 export default class TaskController {
@@ -38,5 +37,18 @@ export default class TaskController {
         );
 
         response.redirect('/tasks/all');
+    }
+
+    static async updateTask(request, response){
+        const id = request.params.id;
+
+        const task = await Task.findOne({
+            raw: true,
+            where: {
+                id: id,
+            }
+        });
+
+        response.render('tasks/edit', { task });
     }
 }
