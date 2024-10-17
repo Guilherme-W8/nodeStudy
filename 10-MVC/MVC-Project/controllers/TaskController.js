@@ -68,4 +68,20 @@ export default class TaskController {
 
         response.redirect('/tasks/all');
     }
+
+    static async toggleTaskStatus(request, response){
+        const id = request.body.id;
+
+        const task = {
+            done: request.body.done === '0' ? true : false
+        }
+
+        await Task.update(task, {
+            where: {
+                id: id
+            }
+        });
+
+        response.redirect('/tasks/all');
+    }
 }
