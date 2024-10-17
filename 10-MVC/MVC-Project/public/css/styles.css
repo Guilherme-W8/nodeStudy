@@ -65,14 +65,19 @@ form input[type='submit'] {
  cursor: pointer;
 }
 
-.task-list {
- list-style: none;
- margin-top: 1em;
+.task-list .title.done {
+  text-decoration: line-through;
+  color: #333;
 }
 
 .task-list a {
   text-decoration: none;
- }
+}
+
+.task-list {
+ list-style: none;
+ margin-top: 1em;
+}
 
 .task-list li {
  padding: 0.5em;
