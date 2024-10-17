@@ -51,4 +51,21 @@ export default class TaskController {
 
         response.render('tasks/edit', { task });
     }
+
+    static async updateTaskPost(request, response){
+        const id = request.body.id;
+
+        const task = {
+            title: request.body.title,
+            description: request.body.description
+        }
+
+        await Task.update(task, {
+            where: {
+                id: id
+            }
+        });
+
+        response.redirect('/tasks/all');
+    }
 }
