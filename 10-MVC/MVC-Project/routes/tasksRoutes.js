@@ -8,6 +8,7 @@ router.post('/add', TaskController.saveTask);
 
 router.post('/remove', TaskController.removeTask);
 
+router.get('/edit/:id', TaskController.updateTask);
 router.get('/all', TaskController.showTasks);
 
 export default router;
