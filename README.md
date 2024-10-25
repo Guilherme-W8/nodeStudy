@@ -184,3 +184,23 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 4. Relacionamento entre as tabelas 
 
 </details>
+
+<!--Divisão do módulo 10-->
+
+<details>
+    <summary>
+        Módulo 10 - Node.js aplicando MVC
+    </summary>
+    <br>
+    
+> Neste módulo foi abordado sobre a arquitetura MVC (MOdel, View, Controller). Como aplicar em projetos, mantendo a boa prática para escalabilidade da aplicação.
+
+1. Conceitos de MVC e suas camadas
+
+2. Criação de rotas, models, views, controllers
+ 
+3. Chamada de camadas por meio do import
+
+4. Foi realizado um projeto prático de tarefas, aplicando o modelo MVC
+
+</details>
