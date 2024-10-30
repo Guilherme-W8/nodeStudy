@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const uri = "mongodb://localhost:27017/parkingDB";
+const uri = "mongodb://root:secret@localhost:27017/parkingDB?authSource=admin";
 const client = new MongoClient(uri);
 
 async function run() {
