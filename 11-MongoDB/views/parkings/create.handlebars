@@ -1,0 +1,20 @@
+<h1>Adicionar estacionamento</h1>
+
+<form action="/create" method="POST">
+    <div class="form-control">
+        <label for="location">Localização do estacionamento</label>
+        <input type="text" name="location" placeholder="Endereço do estacionamento" autocomplete="street-address">
+    </div>
+
+    <div class="form-control">
+        <label for="spotQuantity">Quantidade máxima de vagas</label>
+        <input type="text" name="spotQuantity" placeholder="Quantidade de vagas do estacionamento">
+    </div>
+
+    <div class="form-control">
+        <label for="description">Detalhes sobre o estacionamento</label>
+        <textarea name="description" placeholder="Detalhes sobre o gerenciamento do estacionamento"></textarea>
+    </div>
+
+    <input type="submit" value="Adicionar" class="btn">
+</form>
