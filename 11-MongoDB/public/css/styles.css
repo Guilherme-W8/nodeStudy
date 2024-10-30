@@ -13,20 +13,64 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #173a5c;
     border-bottom: 1px solid #f2f2f2;
 }
 
 #navbar ul {
     display: flex;
     list-style: none;
+    background-color: #173a5c;
 }
 
 #navbar li {
     margin-left: 1em;
+    background-color: #173a5c;
 }
 
 #navbar ul li a {
     text-decoration: none;
     transition: 0.5s;
     font-weight: bold;
+    background-color: #173a5c;
+    color: #f2f2f2;
+}
+
+.container {
+    padding: 2em;
+}
+
+.container h1 {
+    margin-bottom: 1em;
+}
+
+form {
+    max-width: 300px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+.form-control input,
+.form-control textarea {
+    border: 1px solid #d9d9d9;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+
+.btn {
+    background-color: #173a5c;
+    /*5a99d4 Adicionar cor para o Hover*/
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 1em;
+    cursor: pointer;
 }
