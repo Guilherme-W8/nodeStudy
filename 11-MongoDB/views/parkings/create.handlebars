@@ -1,31 +1,40 @@
 <h1>Adicionar estacionamento</h1>
 
-<form action="/parking/create" method="POST">
-    <div class="form-control">
-        <label for="name">Nome da empresa responsável pelo estacionamento</label>
-        <input type="text" name="name" placeholder="Nome da empresa gerenciadora" required>
+<div class="container-form">
+    <div class="image-section">
+        <img src="https://i.ibb.co/RPzqbKG/parking-image.jpg" alt="Imagem do Estacionamento">
     </div>
 
-    <div class="form-control">
-        <label for="location">Localização do estacionamento</label>
-        <input type="text" name="location" placeholder="Endereço do estacionamento" required
-            autocomplete="street-address">
-    </div>
+    <div class="form-section">
+        <form action="/parking/create" method="POST">
+            <div class="form-control">
+                <label for="name">Nome da empresa responsável pelo estacionamento</label>
+                <input type="text" name="name" placeholder="Nome da empresa gerenciadora" required>
+            </div>
 
-    <div class="form-control">
-        <label for="spotQuantity">Quantidade máxima de vagas</label>
-        <input type="text" name="spotQuantity" required placeholder="Quantidade de vagas do estacionamento">
-    </div>
+            <div class="form-control">
+                <label for="location">Localização do estacionamento</label>
+                <input type="text" name="location" placeholder="Endereço do estacionamento" required
+                    autocomplete="street-address">
+            </div>
 
-    <div class="form-control">
-        <label for="description">Detalhes sobre o estacionamento</label>
-        <textarea name="description" required placeholder="Detalhes sobre o gerenciamento do estacionamento"></textarea>
-    </div>
+            <div class="form-control">
+                <label for="spotQuantity">Quantidade máxima de vagas</label>
+                <input type="text" name="spotQuantity" required placeholder="Quantidade de vagas do estacionamento">
+            </div>
 
-    <div class="form-control">
-        <label for="image">Imagem da empresa</label>
-        <input type="text" name="image" placeholder="Coloque a URL da imagem" required>
-    </div>
+            <div class="form-control">
+                <label for="description">Detalhes sobre o estacionamento</label>
+                <textarea name="description" required
+                    placeholder="Detalhes sobre o gerenciamento do estacionamento"></textarea>
+            </div>
 
-    <input type="submit" value="Adicionar" class="btn">
-</form>
+            <div class="form-control">
+                <label for="image">Imagem da empresa</label>
+                <input type="text" name="image" placeholder="Coloque a URL da imagem" required>
+            </div>
+
+            <input type="submit" value="Adicionar" class="btn">
+        </form>
+    </div>
+</div>

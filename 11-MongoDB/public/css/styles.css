@@ -36,43 +36,92 @@
     color: #f2f2f2;
 }
 
-.container {
+/* Form */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2em;
 }
 
-.container h1 {
-    margin-bottom: 1em;
+.image-section {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px 0 0 8px;
+    background-color: #f2f2f2;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.05);
+}
+
+.form-section {
+    width: 50%;
+    padding: 2em;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 form {
-    max-width: 300px;
-}
-
-.form-control {
     display: flex;
     flex-direction: column;
+    gap: 1.2em;
 }
 
 .form-control label {
     font-weight: bold;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
 }
 
 .form-control input,
 .form-control textarea {
-    border: 1px solid #d9d9d9;
-    padding: 5px;
-    margin-bottom: 1em;
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-control textarea {
+    resize: vertical;
 }
 
 .btn {
+    padding: 0.8em 1.2em;
     background-color: #173a5c;
-    /*5a99d4 Adicionar cor para o Hover*/
     color: #fff;
-    padding: 5px 10px;
     border: none;
-    margin-top: 1em;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #2980b9;
 }
 
 /* Parking All */
