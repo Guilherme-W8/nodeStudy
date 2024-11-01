@@ -1,6 +1,14 @@
 import Parking from '../models/Parking.js';
 
 export default class ParkingController {
+    static async showParking(request, response) {
+        const id = request.params.id;
+
+        const parking = await Parking.getParkingById(id);
+
+        response.render('parkings/parking', { parking });
+    }
+
     static async showParkings(request, response) {
         const parkings = await Parking.getParkings();
 
