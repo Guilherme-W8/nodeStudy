@@ -38,10 +38,17 @@
 
 /* Form */
 h1 {
-    text-align: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 0.6em 1em;
     font-size: 2em;
-    margin-bottom: 1em;
-    color: #333;
+    color: #fff;
+    background-color: #173a5c;
+    width: auto;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    margin: 0;
 }
 
 .container-form {
@@ -50,7 +57,7 @@ h1 {
     align-items: stretch;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2em;
+    padding: 5em;
 }
 
 .image-section {
@@ -130,7 +137,7 @@ form {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5em;
-    padding: 2em;
+    padding: 6.25em;
 }
 
 .parking {
@@ -155,18 +162,27 @@ form {
     margin-bottom: 0.5em;
 }
 
-.parking p {
-    font-size: 1em;
+.parking i {
+    font-size: 1.2em;
     color: #666;
     margin: 0.5em 0;
     word-wrap: break-word;
-    padding: 1em;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 90px;
 }
 
 .parking img {
-    max-width: 20em;
-    height: 6em;
+    width: 15em;
+    height: 10em;
+    object-fit: contain;
+    /* Mostra a imagem completa, com possíveis espaços ao redor */
     border-radius: 6px;
     margin-top: 1em;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    /* Define uma cor de fundo para o caso de espaços vazios */
 }
