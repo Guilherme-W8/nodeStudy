@@ -1,10 +1,11 @@
-<h1>Estacionamentos</h1>
+<h1 class="h1-banner">Estacionamentos</h1>
 
 <div class="parkings">
     {{#each parkings}}
     <div class="parking">
         <h3>{{this.name}}</h3>
         <i>{{this.description}}</i>
+        <a href="/parking/{{this._id}}" class="actions">Mais detalhes</a>
         <img src="{{this.image}}" alt="{{this.name}}">
     </div>
     {{/each}}
