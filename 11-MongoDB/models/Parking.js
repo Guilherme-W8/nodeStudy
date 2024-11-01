@@ -1,4 +1,5 @@
 import dbConnect from '../db/dbConnect.js';
+import { ObjectId } from 'mongodb';
 
 class Parking {
     constructor(image, name, location, spotQuantity, description) {
@@ -25,6 +26,14 @@ class Parking {
         const parkings = dbConnect.db().collection('parkings').find().toArray();
 
         return parkings;
+    }
+
+    static async getParkingById(id) {
+        const parking = await dbConnect.db().collection('parkings').findOne({
+            _id: new ObjectId(id),
+        });
+
+        return parking;
     }
 }
 
