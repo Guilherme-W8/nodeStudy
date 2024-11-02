@@ -1,0 +1,43 @@
+<h1 class="h1-banner">Editar estacionamento</h1>
+
+<div class="container-form">
+    <div class="image-section">
+        <img src="https://i.ibb.co/RPzqbKG/parking-image.jpg" alt="Imagem do Estacionamento">
+    </div>
+
+    <div class="form-section">
+        <form action="/parking/edit" method="POST">
+            <input type="hidden" value="{{parking._id}}">
+            <div class="form-control">
+                <label for="name">Nome da empresa responsável pelo estacionamento</label>
+                <input type="text" name="name" placeholder="Nome da empresa gerenciadora" required
+                    value="{{parking.name}}">
+            </div>
+
+            <div class="form-control">
+                <label for="location">Localização do estacionamento</label>
+                <input type="text" name="location" placeholder="Endereço do estacionamento" required
+                    autocomplete="street-address" value="{{parking.location}}">
+            </div>
+
+            <div class="form-control">
+                <label for="spotQuantity">Quantidade máxima de vagas</label>
+                <input type="text" name="spotQuantity" required placeholder="Quantidade de vagas do estacionamento"
+                    value="{{parking.spotQuantity}}">
+            </div>
+
+            <div class="form-control">
+                <label for="description">Detalhes sobre o estacionamento</label>
+                <textarea name="description" required
+                    placeholder="Detalhes sobre o gerenciamento do estacionamento">{{parking.description}}</textarea>
+            </div>
+
+            <div class="form-control">
+                <label for="image">Imagem da empresa</label>
+                <input type="text" name="image" placeholder="Coloque a URL da imagem" value="{{parking.image}}">
+            </div>
+
+            <input type="submit" value="Editar" class="btn">
+        </form>
+    </div>
+</div>
