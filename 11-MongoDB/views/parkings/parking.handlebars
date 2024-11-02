@@ -10,4 +10,8 @@
             <p><strong>Descrição:</strong> {{parking.description}}</p>
         </div>
     </div>
+
+    <form action="/parking/remove/{{parking._id}}" method="POST">
+        <input type="submit" value="Excluir" class="btn">
+    </form>
 </div>
