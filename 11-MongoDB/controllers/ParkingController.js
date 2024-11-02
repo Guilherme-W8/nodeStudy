@@ -15,20 +15,28 @@ export default class ParkingController {
         response.render('parkings/all', { parkings });
     }
 
+    static async removeParking(request, response) {
+        const id = request.params.id;
+
+        await Parking.removeParkingById(id);
+
+        response.redirect('/parking');
+    }
+
     static createParkingForm(request, response) {
         response.render('parkings/create');
     }
 
-    static createParkingPost(request, response) {
-        const image = request.body.image;
+    static async createParkingPost(request, response) {
         const name = request.body.name;
         const location = request.body.location;
         const spotQuantity = request.body.spotQuantity;
         const description = request.body.description;
+        const image = request.body.image;
 
-        const parking = new Parking(image, name, location, spotQuantity, description);
+        const parking = new Parking(name, location, spotQuantity, description, image);
 
-        parking.save();
+        await parking.save();
 
         response.redirect('/parking');
     }
