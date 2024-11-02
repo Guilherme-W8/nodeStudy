@@ -2,28 +2,28 @@ import dbConnect from '../db/dbConnect.js';
 import { ObjectId } from 'mongodb';
 
 class Parking {
-    constructor(image, name, location, spotQuantity, description) {
-        this.image = image;
+    constructor(name, location, spotQuantity, description, image) {
         this.name = name;
         this.location = location;
         this.spotQuantity = spotQuantity;
         this.description = description;
+        this.image = image;
     }
 
     save() {
         const parkings = dbConnect.db().collection('parkings').insertOne({
-            image: this.image,
             name: this.name,
             location: this.location,
             spotQuantity: this.spotQuantity,
-            description: this.description
+            description: this.description,
+            image: this.image
         });
 
         return parkings;
     }
 
-    static getParkings() {
-        const parkings = dbConnect.db().collection('parkings').find().toArray();
+    static async getParkings() {
+        const parkings = await dbConnect.db().collection('parkings').find().toArray();
 
         return parkings;
     }
@@ -34,6 +34,14 @@ class Parking {
         });
 
         return parking;
+    }
+
+    static async removeParkingById(id) {
+        await dbConnect.db().collection('parkings').deleteOne({
+            _id: new ObjectId(id),
+        });
+
+        return;
     }
 }
 
