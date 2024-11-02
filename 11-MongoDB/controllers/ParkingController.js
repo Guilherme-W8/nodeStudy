@@ -6,13 +6,13 @@ export default class ParkingController {
 
         const parking = await Parking.getParkingById(id);
 
-        response.render('parkings/parking', { parking });
+        return response.render('parkings/parking', { parking });
     }
 
     static async showParkings(request, response) {
         const parkings = await Parking.getParkings();
 
-        response.render('parkings/all', { parkings });
+        return response.render('parkings/all', { parkings });
     }
 
     static async removeParking(request, response) {
@@ -20,11 +20,19 @@ export default class ParkingController {
 
         await Parking.removeParkingById(id);
 
-        response.redirect('/parking');
+        return response.redirect('/parking');
+    }
+
+    static async editParkingForm(request, response) {
+        const id = request.params.id;
+
+        const parking = await Parking.getParkingById(id);
+
+        return response.render('parkings/edit', { parking });
     }
 
     static createParkingForm(request, response) {
-        response.render('parkings/create');
+        return response.render('parkings/create');
     }
 
     static async createParkingPost(request, response) {
@@ -38,6 +46,6 @@ export default class ParkingController {
 
         await parking.save();
 
-        response.redirect('/parking');
+        return response.redirect('/parking');
     }
 }
