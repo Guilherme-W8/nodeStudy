@@ -31,6 +31,16 @@ export default class ParkingController {
         return response.render('parkings/edit', { parking });
     }
 
+    static async editParkingPost(request, response) {
+        const { id, name, location, spotQuantity, description, image } = request.body;
+
+        const parking = new Parking(name, location, spotQuantity, description, image);
+
+        await parking.updateParking(id);
+
+        return response.redirect(`/parking/show/${id}`);
+    }
+
     static createParkingForm(request, response) {
         return response.render('parkings/create');
     }
