@@ -251,3 +251,14 @@ form {
 .parking-info p strong {
     font-weight: bold;
 }
+
+/* Buttons */
+.options {
+    display: flex;
+    justify-content: center;
+}
+
+.options a {
+    text-decoration: none;
+    margin-left: 0.5em;
+}

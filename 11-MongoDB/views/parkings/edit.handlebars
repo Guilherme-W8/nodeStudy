@@ -7,7 +7,7 @@
 
     <div class="form-section">
         <form action="/parking/edit" method="POST">
-            <input type="hidden" value="{{parking._id}}">
+            <input type="hidden" name="id" value="{{parking._id}}">
             <div class="form-control">
                 <label for="name">Nome da empresa responsável pelo estacionamento</label>
                 <input type="text" name="name" placeholder="Nome da empresa gerenciadora" required
@@ -37,7 +37,7 @@
                 <input type="text" name="image" placeholder="Coloque a URL da imagem" value="{{parking.image}}">
             </div>
 
-            <input type="submit" value="Editar" class="btn">
+            <input type="submit" value="Atualizar" class="btn">
         </form>
     </div>
 </div>
