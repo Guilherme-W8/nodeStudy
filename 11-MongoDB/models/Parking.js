@@ -43,6 +43,16 @@ class Parking {
 
         return;
     }
+
+    updateParking(id) {
+        dbConnect.db().collection('parkings').updateOne({
+            _id: new ObjectId(id)
+        }, {
+            $set: this
+        });
+
+        return;
+    }
 }
 
 export default Parking;
