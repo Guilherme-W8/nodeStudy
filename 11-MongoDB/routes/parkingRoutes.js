@@ -7,6 +7,7 @@ router.post('/create-post', ParkingController.createParkingPost);
 
 router.post('/remove/:id', ParkingController.removeParking);
 
+router.post('/edit', ParkingController.editParkingPost);
 router.get('/edit/:id', ParkingController.editParkingForm);
 
 router.get('/show/:id', ParkingController.showParking);
