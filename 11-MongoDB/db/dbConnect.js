@@ -1,17 +1,12 @@
-import { MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 
-const uri = "mongodb://root:secret@localhost:27017/parkingDB?authSource=admin";
-const client = new MongoClient(uri);
-
-async function run() {
-    try {
-        await client.connect();
-        console.log('Conectado ao MongoDB');
-    } catch (error) {
-        console.log(error);
-    }
+async function main() {
+    await mongoose.connect('mongodb://root:secret@localhost:27017/parkingDB?authSource=admin');
+    console.log('MongoDB + Mongoose: Connected');
 }
 
-run();
+main().catch((error) => {
+    console.log('Falha na conexão com o MongoDB: ' + error);
+});
 
-export default client;
+export default mongoose;
