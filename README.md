@@ -193,7 +193,7 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
     </summary>
     <br>
     
-> Neste módulo foi abordado sobre a arquitetura MVC (MOdel, View, Controller). Como aplicar em projetos, mantendo a boa prática para escalabilidade da aplicação.
+> Neste módulo foi abordado sobre a arquitetura MVC (Model, View, Controller). Como aplicar em projetos, mantendo a boa prática para escalabilidade da aplicação.
 
 1. Conceitos de MVC e suas camadas
 
@@ -202,5 +202,25 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 3. Chamada de camadas por meio do import
 
 4. Foi realizado um projeto prático de tarefas, aplicando o modelo MVC
+
+</details>
+
+<!--Divisão do módulo 11-->
+
+<details>
+    <summary>
+        Módulo 11 - Node.js com MongoDB + Mongoose
+    </summary>
+    <br>
+    
+> Desenvolvido uma aplicação com Node.js e MongoDB, a aplicação trata-se de um CRUD de empresas que gerenciam estacionamentos.
+
+1. Estruturado no modelo MVC para futuras melhorias
+
+2. Front-end interativo e moderno
+ 
+3. Conta com todas as operações CRUD
+
+4. Foi implementado o Mongoose ODM, deixando o projeto mais focado na regra de negócio
 
 </details>
