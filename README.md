@@ -224,3 +224,23 @@ Argumentos da linha de comando – Como ler e manipular argumentos fornecidos ao
 4. Foi implementado o Mongoose ODM, deixando o projeto mais focado na regra de negócio
 
 </details>
+
+<!--Divisão do módulo 12-->
+
+<details>
+    <summary>
+        Módulo 12 - API's
+    </summary>
+    <br>
+    
+> Foi introduzido conceitos sobre APIs e criação de uma API junto com testes no POSTMAN
+
+1. Apis REST e RESTful
+
+2. Single Page Application (SPA)
+ 
+3. Criando API com Express
+
+4. Adicionando status na resposta
+
+</details>
